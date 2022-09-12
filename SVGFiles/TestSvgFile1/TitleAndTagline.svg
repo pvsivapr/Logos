@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" version="1.1">
+
+    <title>This is a title block</title>
+
+    <defs>
+        <style>
+        .top_title__text_style{
+            fill:#FFA500;
+            stroke:#696969;
+        }
+        .bottom_title__text_style{
+            fill:#FFA500;
+            stroke:#696969;
+        }
+        </style>
+        <g>
+            <path id="bottom_text_path" d="M 155,438 C 260,535 360,515 480,415" fill="transparent"/>
+        </g>
+    </defs>
+
+    <path id="top_text_path" d="M 175,190 C 260,120 360,85 500,280" fill="transparent"/>
+    <text class="top_title__text_style" style="fill:red;font-size:50;" fill="#000000">
+        <textPath xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#top_text_path">
+   Virtual Yugam
+        </textPath>
+    </text>
+
+
+    <text class="bottom_title__text_style" style="fill:red;font-size:50;" fill="#000000">
+        <textPath xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bottom_text_path">
+   Lets Get Started
+        </textPath>
+    </text>
+
+</svg>

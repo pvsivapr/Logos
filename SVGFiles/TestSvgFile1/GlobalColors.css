@@ -1,0 +1,15 @@
+:root{
+    --teal: #008080;
+    --smileyYellow: #FFD528;
+    --deepGray: #696969;
+    --orange: #FFA500;
+}
+
+.top_title__text_style{
+    fill: var(--orange);
+    stroke: var(--deepGray);
+}
+.bottom_title__text_style{
+    fill: var(--orange);
+    stroke: var(--deepGray);
+}
