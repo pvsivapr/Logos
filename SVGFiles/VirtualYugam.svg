@@ -82,6 +82,7 @@
       </g>
    </defs>
 
+   <line style="cursor: pointer; stroke: black; stroke-width: 2;" />
 
    <circle id="guide_1" cx="300" cy="300" r="110" class="face_container_style"/>
 

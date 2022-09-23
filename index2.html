@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+  <link type="text/css" rel="stylesheet" href="main.css" />
+  <title>Poster</title>
+  <script type="text/javascript" src="html2canvas.js"></script>
+  <script type="text/javascript">
+    var Submit = function() {
+      html2canvas(document.body, {
+        onrendered: function(canvas) {
+          document.body.appendChild(canvas);
+        }
+      });
+  };
+  </script>
+</head>
+<body>
+  <div id="main_image">
+    <img src="image.jpg" id= "image"/>
+    <div id="user_text">IT IS TOTALLY AWESOME</div>
+  </div>
+  <div id="edit_text_box">
+    <textarea id="user_input" placeholder="Your text here.." rows="2" cols="30" ></textarea>
+    <div id="change_size">
+      <span style="float: left;">FONT-SIZE : </span>
+      <button id="decrease_size">-</button>
+      <button id="increase_size">+</button>
+    </div>
+    <button onclick="Submit();" >Submit</button>
+  </div>
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/edit_text.js"></script>
+</body>
+</html>

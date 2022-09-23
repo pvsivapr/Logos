@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Using SVG as an image tag</title>
+  <link href='./index.css' rel="stylesheet" />
+</head>
+
+<body id="body_container">
+  <div>
+  </div>
+  <div class="svgImageData">
+    <div class="svgImageDataLeft">
+      <button onclick="onGetNewAttributes(); return null;">Reset</button>
+      <button onclick="onTestAttributes(); return null;">Test</button>
+      <!-- <input type="number" name="points" step="1"> -->
+
+      <div id="svg_data_entry_holder" class="svgImageDataLeft">
+      </div>
+    </div>
+    <div id="svg_img_holder" class="svgImageDataRight">
+      <div class="svgContainer">
+        <div id="svg_main" class="svgMain">
+          <svg id="test_svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" version="1.1"></svg>
+        </div>
+        <div id="svg_work_area" class="svgWorkArea"></div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="./index.js"></script>
+</body>
+
+</html>
