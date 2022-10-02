@@ -1,1 +1,1 @@
-<?php header( 'Location: ./SVGGenerator/index.html' ) ;  ?>
+<?php header( 'Location: ./SVGGenerator/index.html' ); ?>
