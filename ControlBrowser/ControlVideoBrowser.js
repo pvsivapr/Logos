@@ -10,19 +10,27 @@ function openVideoURLWindow(videoURL) {
         videoPlayCount++;
         displayStatusData(`(${videoPlayCount})Video started at :`);
         videoWindow = window.open(videoURL, "_blank", "width=500, height=350");
+        videoWindow.onchange = onVideoWindowChanged;
+        videoWindow.onhashchange = onVideoWindowHashChanged
     }
     catch (exception) { }
 }
 
-function closeVideoURLWindow() {
+const onVideoWindowChanged = function(){
     try {
-        if (videoWindow !== null && videoWindow !== undefined) {
-            displayStatusData("Video stoped at : ");
-            videoWindow.close();
-        }
+        console.log("changed");
     }
     catch (exception) { }
 }
+
+const onVideoWindowHashChanged = function(){
+    try {
+        console.log("hash changed");
+    }
+    catch (exception) { }
+}
+
+
 
 function onSubmitVideoURLForm() {
     try {
@@ -39,9 +47,11 @@ function onSubmitVideoURLForm() {
 
         if (inputTimeInterval !== 0) {
             startIteration();
+            /*
             intervalFunction = setInterval(() => {
                 startIteration();
             }, timeInterval);
+            */
         }
 
     }
@@ -53,16 +63,40 @@ function startIteration() {
         displayStatusData("Iteration started at : ");
         closeVideoURLWindow();
         openVideoURLWindow(linkURL);
+        intervalFunction = setInterval(() => {
+            closeVideoURLWindow();
+            openVideoURLWindow(linkURL);
+        }, timeInterval);
+    }
+    catch (exception) {
+        stopIteration();
+    }
+}
+function closeVideoURLWindow() {
+    try {
+        if (videoWindow !== null && videoWindow !== undefined) {
+            displayStatusData("Video stoped at : ");
+            videoWindow.close();
+        }
     }
     catch (exception) { }
 }
-
+function openVideoURLWindow(videoURL) {
+    try {
+        videoPlayCount++;
+        displayStatusData(`(${videoPlayCount})Video started at :`);
+        videoWindow = window.open(videoURL, "_blank", "width=500, height=350");
+        videoWindow.onchange = onVideoWindowChanged;
+        videoWindow.onhashchange = onVideoWindowHashChanged
+    }
+    catch (exception) { }
+}
 function stopIteration() {
     try {
-        displayStatusData("Iteration stoped at : ");
         closeVideoURLWindow();
         if (intervalFunction !== null && intervalFunction !== undefined) {
             clearInterval(intervalFunction);
+            displayStatusData("Iteration stoped at : ");
         }
     }
     catch (exception) { }
@@ -72,7 +106,7 @@ function displayStatusData(prefixData = "", suffixData = "") {
     try {
         var iterationDataElement = document.getElementById("console_iteration_data");
         var dateTimeStamp = new Date();
-        iterationDataElement.innerHTML += `${prefixData}+${dateTimeStamp.toString()}+${suffixData}</br>`;
+        iterationDataElement.innerHTML += `${prefixData} ${dateTimeStamp.toString("dd-MM-YYYY hh:mm")} ${suffixData}</br>`;
     }
     catch (exception) { }
 }

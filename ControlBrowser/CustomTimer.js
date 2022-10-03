@@ -1,3 +1,5 @@
+
+
 function displayTimer(){
     milliseconds+=10;
     if(milliseconds == 1000){
